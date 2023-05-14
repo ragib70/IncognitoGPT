@@ -1,12 +1,15 @@
 import React from 'react';
 import ChatRoom from './ChatRoom';
+import { MetaMaskProvider } from './MetaMaskContext';
 import './App.css';
 
 function App() {
   return (
+    <MetaMaskProvider>
     <div className="App">
       <ChatRoom />
     </div>
+    </MetaMaskProvider>
   );
 }
 

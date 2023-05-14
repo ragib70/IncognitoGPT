@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import ConnectButton from './ConnectButton';
 import axios from 'axios';
+import ContractInteraction from './ContractInteraction';
 
 class ChatRoom extends Component {
   state = {
@@ -54,6 +56,7 @@ class ChatRoom extends Component {
       <div className="app">
         <div className="sidebar">
           <h1>IncognitoGPT</h1>
+          <ConnectButton/>
           <p>Incognito GPT, a next-generation AI solution designed with privacy at its core. Our system is built to ensure that users can freely interact with AI without the fear of revealing sensitive information. It incorporates advanced mechanisms to detect and mask confidential data, providing a safe and secure environment for AI conversations.</p>
         </div>
         <div className="chat-room-container">
@@ -76,6 +79,7 @@ class ChatRoom extends Component {
               placeholder="Type your message here"
             />
             <input className="submit-button" type="submit" value="Send" />
+            <ContractInteraction className="submit-button" type="submit" value="Send"/>  
           </form>
         </div>
       </div>
