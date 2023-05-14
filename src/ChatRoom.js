@@ -27,11 +27,17 @@ class ChatRoom extends Component {
       text: ''
     }));
 
-    axios.post('https://flask-openai--ritsrnjn.repl.co/api', { userPrompt: this.state.text }) // replace with your API endpoint
+    axios.post('https://avid-infinity-386618.el.r.appspot.com/api', { userPrompt: this.state.text }) // replace with your API endpoint
       .then(response => {
+        // log the privatePrompt to the console
+        console.log("\n")
+        console.log(response.data.privatePrompt)
+        console.log("\n")
+        
+
         const botMessage = {
           id: this.state.messages.length + 1,
-          text: response.data, // modify this based on your API response structure
+          text: response.data.response, // modify this based on your API response structure
           sender: 'bot'
         }
         this.setState(state => ({
